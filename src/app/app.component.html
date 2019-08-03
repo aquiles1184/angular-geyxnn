@@ -1,4 +1,11 @@
 <hello name="{{ name }}"></hello>
+<base href="/">
 <p>
   Start editing to see some magic happen :)
 </p>
+<nav>
+  <a routerLink="home" routerLinkActive="active">Home</a><br>
+  <a routerLink="about">About</a><br>
+  <a routerLink="dashboard">Dashboard</a>
+</nav>
+<router-outlet></router-outlet>

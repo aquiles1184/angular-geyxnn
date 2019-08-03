@@ -13,12 +13,15 @@ import { AboutComponent } from './components/about/about.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login/login.service';
+import { NeedAuthGuard } from './services/login/need-auth-guard';
+import { LogoutComponent } from './components/logout/logout.component';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, 
     RouterModule.forRoot(appRoutes), HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, DashboardComponent, LoginComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, DashboardComponent, LoginComponent, LogoutComponent],
   bootstrap:    [ AppComponent ],
-  providers: [LoginService]
+  providers: [LoginService, NeedAuthGuard ]
 })
 export class AppModule { }

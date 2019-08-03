@@ -20,12 +20,19 @@ export class LoginService {
     });
   }
 
+  logout(){
+    console.log(localStorage.getItem(TOKEN));
+    this.setToken(null);
+  }
+
   setToken(token: string): void {
     localStorage.setItem(TOKEN, token);
   }
 
   isLogged() {
-    return localStorage.getItem(TOKEN) != null;
+    console.log('isLogged '+ localStorage.getItem(TOKEN));
+    console.log('isLogged '+ (localStorage.getItem(TOKEN) != 'null'));
+    return localStorage.getItem(TOKEN) != null && localStorage.getItem(TOKEN) != 'null';
   }
 
 }
